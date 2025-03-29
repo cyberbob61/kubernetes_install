@@ -4,7 +4,7 @@ sudo apt upgrade -y
 
 #swap
 sudo swapoff -a
-sed -i '/ swap / s/^/#/' /etc/fstab
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
 
 #routing
 echo -e "net.bridge.bridge-nf-call-ip6tables = 1\nnet.bridge.bridge-nf-call-iptables = 1\nnet.ipv4.ip_forward = 1" > /etc/sysctl.d/10-k8s.conf
