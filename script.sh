@@ -1,12 +1,12 @@
 #!/bin/bash
 #network configuration
-cat <<EOF | tee /etc/modules-load.d/k8s.conf
+sudo tee /etc/modules-load.d/k8s.conf > /dev/null <<EOF
 overlay
 br_netfilter
 EOF
 
-modprobe overlay
-modprobe br_netfilter
+sudo modprobe overlay
+sudo modprobe br_netfilter
 
 #swap
 sudo swapoff -a
