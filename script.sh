@@ -1,4 +1,7 @@
 #!/bin/bash
+sudo apt update -y
+sudo apt upgrade -y
+
 #swap
 sudo swapoff -a
 sed -i '/ swap / s/^/#/' /etc/fstab
