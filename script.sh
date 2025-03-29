@@ -8,7 +8,7 @@ sudo sed -i '/ swap / s/^/#/' /etc/fstab
 
 #routing
 echo -e "net.ipv4.ip_forward = 1" | sudo tee /etc/sysctl.d/10-k8s.conf > /dev/null
-sysctl -f /etc/sysctl.d/10-k8s.conf
+sudo sysctl -f /etc/sysctl.d/10-k8s.conf
 
 #containerd
 sudo apt-get update
