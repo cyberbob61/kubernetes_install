@@ -33,7 +33,7 @@ sudo apt-get install -y containerd
 sudo systemctl enable containerd
 sudo systemctl start containerd
 
-cat > /etc/crictl.yaml << _EOF
+sudo tee /etc/crictl.yaml > /dev/null << _EOF
 runtime-endpoint: unix:///var/run/containerd/containerd.sock
 _EOF
 
