@@ -1,10 +1,6 @@
 #!/bin/bash
 #network configuration
-sudo tee /etc/modules-load.d/k8s.conf > /dev/null <<EOF
-overlay
-br_netfilter
-EOF
-
+echo -e "overlay\nbr_netfilter" | sudo tee /etc/modules-load.d/k8s.conf > /dev/null
 sudo modprobe overlay
 sudo modprobe br_netfilter
 
